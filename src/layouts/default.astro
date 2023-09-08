@@ -2,12 +2,14 @@
 import { SITE } from '$/config'
 import BaseHead from '$/components/BaseHead.astro';
 import MainLayout from '$/components/MainLayout.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 const { content, showPageHeader = true } = Astro.props
 ---
 <!doctype html>
 <html lang="en">
     <head>
+    <ViewTransitions />
         <BaseHead title={ content.title ? `${ SITE.title } | ${content.title}` : SITE.title } description={ content.description } image={SITE.image}/>
     </head>
     <MainLayout>
