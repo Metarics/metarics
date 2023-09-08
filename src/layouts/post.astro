@@ -28,7 +28,7 @@ const AUTHOR_AVATAR = content.authorImage ? content.authorImage : SITE?.authorIm
             <div class="post__tags">
                 { content.tags.length > 0 && content.tags.map(tag => <a class="post__tag" href={`/tags/${tag}`} title={tag}>{tag}</a>) }
             </div>
-            <h1 class="post__title">{ content.title }</h1>
+            <h1 transition:name={`title:${content.title}`} class="post__title">{ content.title }</h1>
             <h5 class={`post__desc ${AUTHOR_AVATAR ? 'flex flex-row gap-2' : ''}`}>
                 { AUTHOR_AVATAR ? <img class="avatar" src={AUTHOR_AVATAR} alt={`${ AUTHOR_NAME }'s avatar`} /> : ''}
                 <div class={AUTHOR_AVATAR ? 'flex flex-col border-l-2 pl-2' : ''}>

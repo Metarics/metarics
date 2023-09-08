@@ -28,10 +28,10 @@ export const SITE = {
     name: 'Metarics',
     title: 'Metarics - Webpage',
     description: 'Club where data science enthusiasts chill.',
-    url: 'https://metarics.nandanvarma.com/',
+    url: 'https://metarics.nandanvarma.com',
     githubUrl: 'https://github.com/Metarics',
     listDrafts: true,
-    image: 'https://raw.githubusercontent.com/one-aalam/astro-ink/main/public/astro-banner.png',
+    image: 'https://metarics.nandanvarma.com/og.png',
     // YT video channel Id (used in media.astro)
     ytChannelId: '',
     // Optional, user/author settings (example)

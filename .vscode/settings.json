@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "*.mdoc": "markdown"
+        "*.mdoc": "markdown",
+        "*.mdx": "markdown",
     }
 }
