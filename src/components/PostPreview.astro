@@ -8,7 +8,7 @@ interface Props {
 
 const { post: { data: post, slug } } = Astro.props
 ---
-<div transition:name={`card:${post.title}`} class="post-preview">
+<div transition:name={`card ${post.title}`} class="post-preview">
     <div class="sm:w-20 md:w-32">
         <div class="post-preview__date">
             <span class="post-preview__date__day">{ new Date(post.date).getDate() }</span>
@@ -16,7 +16,7 @@ const { post: { data: post, slug } } = Astro.props
         </div>
     </div>
     <div class="flex-1">
-        <h4 transition:name={`title:${post.title}`} class="post-preview__title dark:text-theme-dark-primary">
+        <h4 transition:name={`title ${post.title}`} class="post-preview__title dark:text-theme-dark-primary">
             <a href={`/blog/${slug}`} title={post.title}>{post.title}</a>
         </h4>
         <p class="post-preview__desc">
