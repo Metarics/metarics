@@ -14,6 +14,7 @@ import grayMatter from 'gray-matter'
 
     const contentFilePaths = await globby([ contentFilePattern ])
 
+    console.log(contentFilePattern);
     if(contentFilePaths.length) {
         const files = contentFilePaths.map(async(filePath) => await fs.readFile(filePath, 'utf8'))
         const index = []
