@@ -5,16 +5,17 @@ import grayMatter from 'gray-matter'
 
 (async function () {
     // prepare the dirs
-    const srcDir = path.join(process.cwd(), 'src')
-    const publicDir = path.join(process.cwd(), 'public')
-    const contentBlogDir = path.join(srcDir, 'content', 'blog')
-    const contentFilePattern = path.join(contentBlogDir, '*.md')
-    const indexFile = path.join(publicDir, 'search-index.json')
+    const cwd = path.normalize(process.cwd()).replace(/\\/g, '/')
+    const srcDir = path.posix.join(cwd, 'src')
+    const publicDir = path.posix.join(process.cwd(), 'public')
+    const contentBlogDir = path.posix.join(srcDir, 'content', 'blog')
+    const contentFilePattern = path.posix.join(contentBlogDir, '*.md')
+    const indexFile = path.posix.join(publicDir, 'search-index.json')
     const getSlugFromPathname = (pathname) => path.basename(pathname, path.extname(pathname))
 
-    const contentFilePaths = await globby([ contentFilePattern ])
+    const contentFilePaths = await globby(contentFilePattern)
 
-    console.log(contentFilePattern);
+    console.log(contentFilePaths);
     if(contentFilePaths.length) {
         const files = contentFilePaths.map(async(filePath) => await fs.readFile(filePath, 'utf8'))
         const index = []
