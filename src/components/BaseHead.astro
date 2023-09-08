@@ -55,24 +55,20 @@ const { title = SITE.title, description, permalink, image } = Astro.props;
 
 <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
 ></script> -->
-<script is:inline>
-  function colorMode(){
-    const theme = (() => {
-      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-        return localStorage.getItem("theme");
-      }
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
-      }
-      return "light";
-    })();
-    
-    if (theme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
+<script transition:persist is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
     }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
   }
-  colorMode();
-  document.addEventListener('astro:beforeload',colorMode)
 </script>
