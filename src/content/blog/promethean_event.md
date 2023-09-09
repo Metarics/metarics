@@ -4,7 +4,6 @@ description: "Celebrating Our College's 25 Year Anniversary with 10 Exciting Eve
 tags: 
     - event
 author: Nandan Varma
-authorTwitter: 
 date: "2023-02-22T17:52:48Z"
 image: https://i.imgur.com/RWk8dtk.jpg
 category: event

@@ -6,7 +6,7 @@ tags:
 author: Nandan Varma
 date: "2023-02-19T13:03:20Z"
 image: https://i.imgur.com/uHdfljz.jpeg
-category: club
+category: design
 ---
 
 # Getting Started: How to Use Our Webpage to Access Event Details

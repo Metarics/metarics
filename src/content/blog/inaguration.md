@@ -4,7 +4,6 @@ description: 'We are excited to announce the inauguration of Metarics, our new c
 tags: 
     - club
 author: Nandan Varma
-authorTwitter: 
 date: "2023-09-08T13:46:44Z"
 image: https://i.imgur.com/5R1Y2YM.jpeg
 category: club

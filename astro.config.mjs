@@ -4,6 +4,7 @@ import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
 // import markdoc from "@astrojs/markdoc";
@@ -36,6 +37,7 @@ export default defineConfig( /** @type {import('astro').AstroUserConfig} */{
   },
   integrations: [
     mdx(),
+    react(),
     // markdoc(), // disabled now due to an issue with Vercel builds
     svelte(), tailwind({
     config: {
