@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItems = {
 
 export const SITE = {
     // Your site's detail?
-    name: 'Metarics',
+    name: 'Met@rics',
     title: 'Metarics - Webpage',
     description: 'Club where data science enthusiasts chill.',
     url: 'https://metarics.nandanvarma.com',
