@@ -4,7 +4,7 @@
     import PostSearchPreview from './PostSearchPreview.svelte'
 
     let searchInput
-    let searchableDocs
+    let searchableDocs = []
     let searchIndex
 
     let searchQuery = ''
@@ -14,20 +14,14 @@
         const lunr = (await import('lunr')).default
         const resp = await fetch('/search-index.json')
         searchableDocs = await resp.json()
-            // Initialize indexing
+        // Initialize indexing
         searchIndex = lunr(function(){
-            // the match key...
             this.ref('slug')
-
-            // indexable properties
             this.field('title')
             this.field('description')
             this.field('tags')
-
-            // Omit, if you don't want to search on `body`
             this.field('body')
 
-            // Index every document
             searchableDocs.forEach(doc => {
                 this.add(doc)
             }, this)
@@ -37,15 +31,10 @@
 
     $: {
         if(searchQuery && searchQuery.length >= 3) {
-           const matches = searchIndex.search(searchQuery)
+           const matches = searchIndex.search(`*${searchQuery}*`)
+           searchResults = matches.map(match => searchableDocs.find(doc => match.ref === doc.slug)).filter(Boolean)
+        } else {
            searchResults = []
-           matches.map(match => {
-               searchableDocs.filter(doc => {
-                    if(match.ref === doc.slug) {
-                        searchResults.push(doc)
-                    }
-               })
-           })
         }
     }
 </script>
@@ -71,6 +60,7 @@
     </div>
     <div class="note"><small>click anywhere outside to close</small></div>
 </div>
+
 <style>
     .search {
         @apply w-full relative bg-theme-primary  p-8  rounded-md shadow-lg;

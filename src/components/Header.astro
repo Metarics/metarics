@@ -1,5 +1,5 @@
 ---
-import { SITE } from "$/config";
+import { SITE } from "../config";
 import SvgIcon from "./SvgIcon.astro";
 import { Icon } from "astro-icon";
 import ModeSwitcherBtn from "./ModeSwitcherBtn.svelte";
@@ -10,7 +10,7 @@ import { getAuth } from "firebase-admin/auth";
 const auth = getAuth(app);
 let logged_in: boolean = false;
 if (Astro.cookies.has("session")) {
-    const sessionCookie = Astro.cookies.get("session").value;
+    const sessionCookie = Astro.cookies.get("session")!.value;
     const decodedCookie = await auth.verifySessionCookie(sessionCookie);
     if (decodedCookie) {
         logged_in = true;
@@ -32,7 +32,7 @@ if (Astro.cookies.has("session")) {
         <h3 class="header__title dark:text-theme-dark-secondary">
             <a href="">{SITE.name}</a>
         </h3>
-        <div class="header__meta-more flex">
+        <div class="header__meta-more md:flex">
             <p class="header__desc">
                 {SITE.description}
             </p>
@@ -71,8 +71,16 @@ if (Astro.cookies.has("session")) {
                     </li>
                     <li>
                         <a
-                            href={SITE.githubUrl}
-                            title={`${SITE.name}'s Github URL'`}
+                            href={SITE.instagramUrl}
+                            title={`${SITE.name}'s Instagram URL'`}
+                        >
+                            <Icon class="h-6 w-6" name="mdi:instagram" />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href={SITE.whatsappUrl}
+                            title={`${SITE.name}'s WhatsApp URL'`}
                         >
                             <Icon class="h-6 w-6" name="mdi:whatsapp" />
                         </a>
@@ -91,9 +99,9 @@ if (Astro.cookies.has("session")) {
                             </SvgIcon>
                         </a>
                     </li> -->
-                    <!-- <li>
+                    <li>
                         <ModeSwitcherBtn client:visible />
-                    </li> -->
+                    </li>
                 </ul>
             </nav>
         </div>

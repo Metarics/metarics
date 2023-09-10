@@ -26,10 +26,12 @@ export const NAV_ITEMS: NavItems = {
 export const SITE = {
     // Your site's detail?
     name: 'Met@rics',
-    title: 'Metarics - Webpage',
+    title: 'Metarics',
     description: 'Club where data science enthusiasts chill.',
     url: 'https://metarics.nandanvarma.com',
     githubUrl: 'https://github.com/Metarics',
+    whatsappUrl: 'https://github.com/Metarics',
+    instagramUrl: 'https://www.instagram.com/metarics_bvrit',
     listDrafts: true,
     image: 'https://metarics.nandanvarma.com/og.png',
     // YT video channel Id (used in media.astro)
