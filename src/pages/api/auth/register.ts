@@ -13,7 +13,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
   if (!email || !password || !name) {
     return new Response(
-      "Missing form data",
+      "Error: Missing form data",
       { status: 400 }
     );
   }
@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     });
   } catch (error: any) {
     return new Response(
-      "Something went wrong",
+      `Error : ${error.message}`,
       { status: 400 }
     );
   }
