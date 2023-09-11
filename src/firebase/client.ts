@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
-
+// its ok to ship this to client :)
 const firebaseConfig = {
-    apiKey: "AIzaSyA4JsIV-WevFvSRXfQWRpKUpvqWCheIxlQ",
-    authDomain: "thebrosproj.firebaseapp.com",
-    projectId: "thebrosproj",
-    storageBucket: "thebrosproj.appspot.com",
-    messagingSenderId: "197012732766",
-    appId: "1:197012732766:web:b7a52e33bce7c5e9be6dcf"
-  };
+  apiKey: "AIzaSyAn7ZoxFyhbzc9xVOpt33L7eFq2YBCk4Vk",
+  authDomain: "metarics-bvrit.firebaseapp.com",
+  projectId: "metarics-bvrit",
+  storageBucket: "metarics-bvrit.appspot.com",
+  messagingSenderId: "930363382932",
+  appId: "1:930363382932:web:74650349c2a92ddae66881"
+};
 
 export const app = initializeApp(firebaseConfig);

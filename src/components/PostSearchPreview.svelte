@@ -1,8 +1,8 @@
 <script lang="ts">
     type Props = {
-        slug: string
-        title: string
-        description: string
+        slug: string,
+        title: string,
+        description: string,
         category: string,
         tags: Array<string>
     }
